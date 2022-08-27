@@ -5,7 +5,7 @@ const inputDelayEl = document.querySelector('input[name="delay"]');
 const inputStepEl = document.querySelector('input[name="step"]');
 const inputAmountEl = document.querySelector('input[name="amount"]');
 
-let totalDelay = Number(inputDelayEl.value);
+let totalDelay = Number(inputDelayEl.value) - Number(inputStepEl.value);
 
 function createPromise(position, delay) {
   return (promise = new Promise((resolve, reject) => {
@@ -37,5 +37,5 @@ formEl.addEventListener('submit', evt => {
 
   setTimeout(totalPromises, Number(inputDelayEl.value));
 
-  totalDelay = Number(inputDelayEl.value);
+  totalDelay = Number(inputDelayEl.value) - Number(inputStepEl.value);
 });
